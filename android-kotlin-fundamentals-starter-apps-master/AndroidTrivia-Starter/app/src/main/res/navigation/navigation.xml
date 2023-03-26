@@ -8,8 +8,8 @@
     <fragment
         android:id="@+id/titleFragment"
         android:name="com.example.android.navigation.TitleFragment"
-        android:label="fragment_title"
-        tools:layout="@layout/fragment_title" >
+        android:label="Android Trivia"
+        tools:layout="@layout/fragment_title">
         <action
             android:id="@+id/action_titleFragment_to_gameFragment"
             app:destination="@id/gameFragment" />
@@ -55,5 +55,10 @@
         android:name="com.example.android.navigation.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/rulesFragment"
+        android:name="com.example.android.navigation.RulesFragment"
+        android:label="fragment_rules"
+        tools:layout="@layout/fragment_rules" />
 
 </navigation>
