@@ -67,7 +67,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Timber.i("onCreate called")
+
+
         // Use Data Binding to get reference to the views
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
@@ -75,11 +76,13 @@ class MainActivity : AppCompatActivity() {
             onDessertClicked()
 
         }
-        dessertTimer = DessertTimer()
+        dessertTimer = DessertTimer(this.lifecycle)
 
         // Set the TextViews to the right values
         binding.revenue = revenue
         binding.amountSold = dessertsSold
+
+        Timber.i("onCreate called")
 
 
         // Make sure the correct dessert is showing
@@ -156,13 +159,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        dessertTimer.startTimer()
+
 
         Timber.i("onStart called")
     }
     override fun onStop() {
         super.onStop()
-        dessertTimer.stopTimer()
+
 
         Timber.i("onStop Called")
     }
